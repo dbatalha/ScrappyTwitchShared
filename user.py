@@ -76,8 +76,9 @@ class User:
         self._id = self.get_user_id()
 
     def to_json(self):
+        data = []
         user_dict = {
-            "_id": self._id,
+            "id": self._id,
             "user_id": self.user_id,
             "login": self.login,
             "display_name": self.display_name,
@@ -88,4 +89,4 @@ class User:
             "created_at": self.created_at
         }
 
-        return json.dumps(user_dict)
+        return '{"data": ' + json.dumps(data.append(user_dict)) + '}'
