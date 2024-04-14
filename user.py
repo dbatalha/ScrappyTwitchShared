@@ -88,5 +88,5 @@ class User:
             "offline_image_url": self.offline_image_url,
             "created_at": self.created_at
         }
-
-        return '{"data": ' + json.dumps(data.append(user_dict)) + '}'
+        data.append(user_dict)
+        return '{"data": ' + json.dumps(data) + '}'
