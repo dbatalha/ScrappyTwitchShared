@@ -36,3 +36,13 @@ class Login:
         self.set_access_token(json_login["access_token"])
         self.set_expires_in(json_login["expires_in"])
         self.set_token_type(json_login["token_type"])
+
+    def to_json(self):
+        login_dict = {
+            "access_token": self.access_token,
+            "expires_in": self.expires_in,
+            "token_type": self.token_type,
+            "client_id": self.client_id
+        }
+
+        return json.dumps(login_dict)

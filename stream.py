@@ -138,3 +138,25 @@ class Stream:
             self.set_tag_ids(json_stream["data"][0]["tag_ids"])
             self.set_tags(json_stream["data"][0]["tags"])
             self.set_is_mature(json_stream["data"][0]["is_mature"])
+
+    def to_json(self):
+        stream_dict = {
+            "_id": self._id,
+            "stream_status": self.stream_status,
+            "stream_id": self.stream_id,
+            "user_id": self.user_id,
+            "user_login": self.user_login,
+            "user_name": self.user_name,
+            "game_id": self.game_id,
+            "game_name": self.game_name,
+            "title": self.title,
+            "viewer_count": self.viewer_count,
+            "started_at": self.started_at,
+            "language": self.language,
+            "thumbnail_url": self.thumbnail_url,
+            "tag_ids": self.tag_ids,
+            "tags": self.tags,
+            "is_mature": self.is_mature
+        }
+
+        return json.dumps(stream_dict)

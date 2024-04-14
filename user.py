@@ -74,3 +74,18 @@ class User:
         self.set_offline_image_url(json_user["data"][0]["offline_image_url"])
         self.set_created_at(json_user["data"][0]["created_at"])
         self._id = self.get_user_id()
+
+    def to_json(self):
+        user_dict = {
+            "_id": self._id,
+            "user_id": self.user_id,
+            "login": self.login,
+            "display_name": self.display_name,
+            "broadcaster_type": self.broadcaster_type,
+            "description": self.description,
+            "profile_image_url": self.profile_image_url,
+            "offline_image_url": self.offline_image_url,
+            "created_at": self.created_at
+        }
+
+        return json.dumps(user_dict)

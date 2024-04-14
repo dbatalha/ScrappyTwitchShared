@@ -13,3 +13,10 @@ class Watcher:
     def parse_watcher(self, json_string):
         json_watcher = json.loads(json_string)
         self.set_name(json_watcher["name"])
+
+    def to_json(self):
+        watcher_dict = {
+            "name": self.name
+        }
+
+        return json.dumps(watcher_dict)
