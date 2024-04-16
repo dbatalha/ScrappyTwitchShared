@@ -142,7 +142,7 @@ class Stream:
     def to_json(self):
         data = []
         stream_dict = {
-            "_id": self._id,
+            "id": self._id,
             "stream_status": self.stream_status,
             "stream_id": self.stream_id,
             "user_id": self.user_id,
