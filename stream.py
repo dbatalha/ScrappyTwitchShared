@@ -140,6 +140,7 @@ class Stream:
             self.set_is_mature(json_stream["data"][0]["is_mature"])
 
     def to_json(self):
+        data = []
         stream_dict = {
             "_id": self._id,
             "stream_status": self.stream_status,
@@ -159,4 +160,5 @@ class Stream:
             "is_mature": self.is_mature
         }
 
-        return json.dumps(stream_dict)
+        data.append(stream_dict)
+        return '{"data": ' + json.dumps(data) + '}'
